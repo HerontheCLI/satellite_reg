@@ -1,0 +1,15 @@
+---
+# tasks file for satellite_register
+
+  - name: Install the Katello RPM from Satellite
+    yum:
+      name: "{{ satellite_host }}/pub/katello-ca-comsuner-latest.noarch.rpm"
+      state: installed
+
+  - name: Register To Satellite
+    redhat_subscription:
+      state: present
+      activationkey: "{{ sat_key }}" 
+      environment: "{{ sat_org }}"
+      auto_attach: True
+
