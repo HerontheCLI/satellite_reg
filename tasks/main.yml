@@ -13,3 +13,8 @@
       environment: "{{ sat_org }}"
       auto_attach: True
 
+  - name: Install Katello Tools after the host is registered
+    yum:
+      state: installed
+      name: "{{ sat_tools }}"
+

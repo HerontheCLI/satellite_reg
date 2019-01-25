@@ -1,2 +1,7 @@
 ---
 # defaults file for satellite_register
+
+sat_tools:
+  - katello-host-tools
+  - katello-host-tools-tracer
+  - katello-agent
